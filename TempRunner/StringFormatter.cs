@@ -30,9 +30,8 @@ namespace PointsBet_Backend_Online_Code_Test
 
             // Changed variable name from qry to query -> intrinsic variable names
             StringBuilder query = new StringBuilder();
-            query.Append(quote).Append(items[0]).Append(quote); // A lot easier to read than , {0}{1}{0}
+            query.Append(quote).Append(items[0]).Append(quote);
 
-            // removed redundant if statment to check if items are more than 1
             for (int i = 1; i < items.Length; i++)
             {
                 query.Append(", ").Append(quote).Append(items[i]).Append(quote);

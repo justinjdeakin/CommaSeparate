@@ -30,5 +30,10 @@ namespace PointsBet_Backend_Online_Code_Test
 
             return qry.ToString();
         }
+
+        public static void Main(string[] args)
+        {
+            this.ToCommaSepatatedList(['test', 'test2'], ",");
+        }
     }
 }

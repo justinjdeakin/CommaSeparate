@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace PointsBet_Backend_Online_Code_Test
 {
@@ -16,24 +17,34 @@ namespace PointsBet_Backend_Online_Code_Test
     {
 
         //Code to improve
-        public static string ToCommaSepatatedList(string[] items, string quote)
-        {
-            StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
 
-            if (items.Length > 1)
+        // Changed mehtod name from ToCommaSepatatedList to ToCommaSeparatedList -  Fix spelling 
+        public static string ToCommaSeparatedList(string[] items, string quote)
+        {   
+
+            // return if input is not valid to save computation
+            if (items == null || items.Length == 0) 
             {
-                for (int i = 1; i < items.Length; i++)
-                {
-                    qry.Append(string.Format(", {0}{1}{0}", quote, items[i]));
-                }
+                return string.Empty;
             }
 
-            return qry.ToString();
+            // Changed variable name from qry to query -> intrinsic variable names
+            StringBuilder query = new StringBuilder();
+            query.Append(quote).Append(items[0]).Append(quote); // A lot easier to read than , {0}{1}{0}
+
+            // removed redundant if statment to check if items are more than 1
+            for (int i = 1; i < items.Length; i++)
+            {
+                query.Append(", ").Append(quote).Append(items[i]).Append(quote);
+            }
+
+            return query.ToString();
         }
 
         public static void Main(string[] args)
         {
-            this.ToCommaSepatatedList(['test', 'test2'], ",");
+            var result = ToCommaSeparatedList(new string[] { "test", "test2" }, "\'");
+            Console.WriteLine(result);
         }
     }
 }

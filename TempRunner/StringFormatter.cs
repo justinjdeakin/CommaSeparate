@@ -33,7 +33,8 @@ namespace PointsBet_Backend_Online_Code_Test
 
         public static void Main(string[] args)
         {
-            this.ToCommaSepatatedList(['test', 'test2'], ",");
+            var result = ToCommaSepatatedList(new string[] { "test", "test2" }, "\"");
+            Console.WriteLine(result);
         }
     }
 }

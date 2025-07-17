@@ -21,6 +21,13 @@ namespace PointsBet_Backend_Online_Code_Test
         // Changed mehtod name from ToCommaSepatatedList to ToCommaSeparatedList -  Fix spelling 
         public static string ToCommaSeparatedList(string[] items, string quote)
         {   
+
+            // return if input is not valid to save computation
+            if (items == null || items.Length == 0) 
+            {
+                return string.Empty;
+            }
+
             // Changed variable name from qry to query -> intrinsic variable names
             StringBuilder query = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
 
@@ -37,7 +44,7 @@ namespace PointsBet_Backend_Online_Code_Test
 
         public static void Main(string[] args)
         {
-            var result = ToCommaSeparatedList(new string[] { "test", "test2" }, "\"");
+            var result = ToCommaSeparatedList(new string[] { "test", "test2" }, "\'");
             Console.WriteLine(result);
         }
     }

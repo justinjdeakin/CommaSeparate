@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace PointsBet_Backend_Online_Code_Test
 {
@@ -16,7 +17,9 @@ namespace PointsBet_Backend_Online_Code_Test
     {
 
         //Code to improve
-        public static string ToCommaSepatatedList(string[] items, string quote)
+
+        // Changed mehtod name from ToCommaSepatatedList to ToCommaSeparatedList -  Fix spelling 
+        public static string ToCommaSeparatedList(string[] items, string quote)
         {
             StringBuilder qry = new StringBuilder(string.Format("{0}{1}{0}", quote, items[0]));
 
@@ -33,7 +36,7 @@ namespace PointsBet_Backend_Online_Code_Test
 
         public static void Main(string[] args)
         {
-            var result = ToCommaSepatatedList(new string[] { "test", "test2" }, "\"");
+            var result = ToCommaSeparatedList(new string[] { "test", "test2" }, "\"");
             Console.WriteLine(result);
         }
     }

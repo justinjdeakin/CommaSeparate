@@ -1,3 +1,22 @@
+# StringFormatter
+
+A C# application for converting an array of strings into a comma separated list with optional quoting.
+
+## Features
+
+- Converts string arrays to comma (or any symbol) separated strings
+- Wraps each item in a custom quote character or string
+- Handles null and empty input gracefully
+- Efficient and readable implementation using `StringBuilder`
+
+## Usage
+
+### Method Signature
+
+```csharp
+public static string ToCommaSeparatedList(string[] items, string quote)
+```
+
 # PointsBet_Backend_Online_Code_Test
 This is a simple folder containing a `StringFormatter.cs` file for code enhancement.
 
@@ -10,4 +29,3 @@ For candidates, please follow the below points to complete the test:
 
 Thank you for completing the code test with PointsBet.
 
-Add to github

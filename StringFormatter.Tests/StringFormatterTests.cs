@@ -1,7 +1,7 @@
 using Xunit;
 using PointsBet_Backend_Online_Code_Test;
 
-namespace StringFormatter.Tests
+namespace PointsBet_Backend_Online_Code_Test.Tests
 {
     public class StringFormatterTests
     {
